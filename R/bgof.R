@@ -154,6 +154,7 @@ bgof <- function(x,
   	
   	for (i in 1:sample.size) {
   		a <- gof(x$formula,
+			 constraints = x$constraints,
   		         coef = FF[i,],
   		         verbose = FALSE,
   		         GOF = ~ idegree + odegree + espartners + distance,
