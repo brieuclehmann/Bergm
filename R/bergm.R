@@ -154,13 +154,14 @@ bergm <- function(formula,
   ess <- round(effectiveSize(FF), 0)
   names(ess) <- model$coef.names
   
-  out = list(Time    = runtime,
-             formula = formula,
-             specs   = model$coef.names,
-             dim     = dim,
-             Theta   = FF,
-             AR      = AR,
-             ess     = ess)
+  out = list(Time        = runtime,
+             formula     = formula,
+             constraints = constraints,
+             specs       = model$coef.names,
+             dim         = dim,
+             Theta       = FF,
+             AR          = AR,
+             ess         = ess)
 
   class(out) <- "bergm"
   return(out)
