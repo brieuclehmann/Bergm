@@ -87,6 +87,7 @@ bgof <- function(x,
   if (DN == FALSE) { # undirected
   	for (i in 1:sample.size) {
 	  	a <- gof(x$formula,
+			 constraints = x$constraints,
 	  	         coef = FF[i, ],
 	  	         verbose = FALSE,
 	  	         control = control.gof.formula(nsim = 1, MCMC.burnin = aux.iters))
