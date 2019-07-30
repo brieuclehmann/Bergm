@@ -66,6 +66,7 @@
 #' @export
 
 bergm <- function(formula,
+                  constraints = ~.,
                   prior.mean  = NULL,
                   prior.sigma = NULL,
                   burn.in     = 100,
@@ -92,8 +93,7 @@ bergm <- function(formula,
                           MCMC.interval = 1,
                           MCMC.samplesize = 1)
   
-  proposal <- ergm_proposal(object = ~.,
-                            constraints = ~.,
+  proposal <- ergm_proposal(constraints,
                             arguments = control$MCMC.prop.args,
                             nw = y)
 
